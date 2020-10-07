@@ -8,6 +8,7 @@
   },
   "author": "",
   "license": "ISC",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "dependencies": {
     "ajv": "^6.12.5"
   }
