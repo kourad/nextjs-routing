@@ -1,0 +1,4 @@
+# ignore files and folders
+node_modules
+*-lock.json
+*.lock
