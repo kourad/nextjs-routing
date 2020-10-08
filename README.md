@@ -10,7 +10,6 @@ Since my website has more complex API needs, (authentication, logging, etc) I ha
 is quite simple when it comes to building your API endpoints. For example, you do not have a convenient way to differentiate
 if your request is of type GET or POST, that added to the difficulty of adding middlewares to extend the functionality has led me to create this library.
 
-Translated with www.DeepL.com/Translator (free version)
 
 ## INSTALL
 
