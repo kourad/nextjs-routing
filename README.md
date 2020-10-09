@@ -11,14 +11,14 @@ is quite simple when it comes to building your API endpoints. For example, you d
 if your request is of type GET or POST, that added to the difficulty of adding middlewares to extend the functionality has led me to create this library.
 
 
-## INSTALL
+## Install
 
 ```
 npm install nextjs-routing
 yarn add nextjs-routing
 ```
 
-## HOW TO START
+## How to start
 
 ```javascript
 // /api/test.js
@@ -47,6 +47,36 @@ export default runWithMiddlewares({
     GET: [myFunction3]
 });
 ```
+
+## Middleware pattern
+
+All methods added must follow the pattern from expressjs, so our functions looks like:
+
+
+```javascript
+function middleware(req, res, next) {
+    // your code here.
+}
+
+function errorMiddleware(error, req, res, next) {
+    // your code here
+}
+```
+
+
+## Override the error handler
+
+You can override the error handler providing your own function.
+
+```javascript
+export default runWithMiddlewares({
+    /* ...your config */
+}, function (error, req, res, next) {
+    // GET THE ERROR HERE
+});
+```
+
+
 
 
 **More on next update**
