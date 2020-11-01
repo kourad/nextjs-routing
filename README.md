@@ -64,6 +64,34 @@ function errorMiddleware(error, req, res, next) {
 ```
 
 
+## Pass data trought different handlers
+
+The runWithMiddlewares method implements a value map to pass data between different handlers.
+
+```javascript
+
+function handler1(req, res, next) {
+    // add data to the route
+    req.set('mydata', {
+        // some data
+    });
+    next();
+}
+
+function handler2( req, res, next ) {
+    const mydata = req.get('mydata');
+
+    // code...
+}
+
+export default runWithMiddlewares({
+    POST: [handler1, handler2],
+});
+
+```
+
+
+
 ## Override the error handler
 
 You can override the error handler providing your own function.
@@ -76,6 +104,27 @@ export default runWithMiddlewares({
 });
 ```
 
+
+# API
+
+## runWithMiddlewares(handlers: Object, errorHandler?: Function)
+
+**handlers**: Map with the error handlers to execute
+
+**errorhandler**: Function executed when any error is submited
+
+Example:
+
+```javascript
+runWithMiddlewares({
+    GET: [...functions],
+    POST: [...functions],
+    UPDATE: [...functions],
+    DELETE: [...functions],
+}, (error, req, res, next) => {
+
+})
+```
 
 
 
