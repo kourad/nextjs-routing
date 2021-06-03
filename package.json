@@ -1,6 +1,6 @@
 {
   "name": "nextjs-routing",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A small libraries to manage middlewares and routing on nextjs",
   "main": "index.js",
   "scripts": {
